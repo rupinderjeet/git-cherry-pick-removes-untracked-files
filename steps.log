@@ -1,3 +1,7 @@
 created steps.log
+
 initialized git repository
 commiting..
+creating dev branch..
+created dev branch, added test.log file with 'test file 01' text, commit 68b7739 created
+switched back to main, creating commit..
