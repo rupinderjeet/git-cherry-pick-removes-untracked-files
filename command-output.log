@@ -1,0 +1,41 @@
+Last login: Sat Oct 15 19:10:43 on ttys001
+potatojuicer: ~ % cd Documents/projects 
+potatojuicer: projects % mkdir git-cherry-pick-removes-untracked-files
+potatojuicer: projects % cd git-cherry-pick-removes-untracked-files
+potatojuicer: git-cherry-pick-removes-untracked-files % touch steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "created steps.log" >> steps.log 
+potatojuicer: git-cherry-pick-removes-untracked-files % git init
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "initialized git repository" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "commiting.." >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .
+potatojuicer: git-cherry-pick-removes-untracked-files % git commit -m "first commit"
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "creating dev branch.." >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .    
+potatojuicer: git-cherry-pick-removes-untracked-files % git stash
+potatojuicer: git-cherry-pick-removes-untracked-files % git checkout -b dev 
+potatojuicer: git-cherry-pick-removes-untracked-files % touch test.log    
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "test file 01" >> test.log 
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .
+potatojuicer: git-cherry-pick-removes-untracked-files % git commit -m "created test.log"
+potatojuicer: git-cherry-pick-removes-untracked-files % git checkout main
+potatojuicer: git-cherry-pick-removes-untracked-files % git stash pop
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "created dev branch, added test.log file with 'test file 01' text, commit 68b7739 created" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "switched back to main, creating commit.." >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .
+potatojuicer: git-cherry-pick-removes-untracked-files % git commit -m "updates steps.log"
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "test.log" > .gitignore
+potatojuicer: git-cherry-pick-removes-untracked-files % touch test.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "test file 02" > test.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "created .gitignore; ignored test.log" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "created test.log with 'test file 02' text" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "committing" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .
+potatojuicer: git-cherry-pick-removes-untracked-files % git commit -m "updates steps.log"
+potatojuicer: git-cherry-pick-removes-untracked-files % git cherry-pick 68b7739
+potatojuicer: git-cherry-pick-removes-untracked-files % git reset --hard HEAD~1
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "git cherry-pick 68b7739" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "cherry-pick complete; git reset --hard HEAD~1" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "untracked test.log is lost forever" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % echo "committing" >> steps.log
+potatojuicer: git-cherry-pick-removes-untracked-files % git add .
+potatojuicer: git-cherry-pick-removes-untracked-files % git commit -m "updates steps.log"
