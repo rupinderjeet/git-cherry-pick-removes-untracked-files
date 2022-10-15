@@ -7,3 +7,7 @@ switched back to main, creating commit..
 created .gitignore; ignored test.log
 created test.log with 'test file 02' text
 committing
+git cherry-pick 68b7739
+cherry-pick complete; git reset --hard HEAD~1
+untracked test.log is lost forever
+committing
