@@ -1,0 +1,37 @@
+Thank you for filling out a Git bug report!
+Please answer the following questions to help us understand your issue.
+
+What did you do before the bug happened? (Steps to reproduce your issue)
+> Check steps.log or command-output.log at https://github.com/rupinderjeet/git-cherry-pick-removes-untracked-files
+
+What did you expect to happen? (Expected behavior)
+> Expected to recieve a warning that a cherry-pick will overwrite untracked files if cherry-pick commit had a file with same name
+
+What happened instead? (Actual behavior)
+> The cherry-pick overwrote untracked files with the matching names from cherry-picked commit
+
+What's different between what you expected and what actually happened?
+> My untracked files (mentioned in .gitignore) are lost forever (it seems). I would like to receive a warning here.
+
+Anything else you want to add:
+> https://github.com/rupinderjeet/git-cherry-pick-removes-untracked-files includes my reproduction steps. In my original repository, I have lost untracked config files because someone else pushed empty config files with same name from their side. And, I happened to cherry-picked their commit. I haven't tested this with 'git merge' or other similar options. If there is a way to recover these (besides file recovery tools), please let me know.
+
+Please review the rest of the bug report below.
+You can delete any lines you don't wish to share.
+
+[System Info]
+git version:
+git version 2.37.0 (Apple Git-136)
+cpu: arm64
+no commit associated with this build
+sizeof-long: 8
+sizeof-size_t: 8
+shell-path: /bin/sh
+feature: fsmonitor--daemon
+uname: Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Aug 22 20:19:52 PDT 2022; root:xnu-8020.140.49~2/RELEASE_ARM64_T6000 arm64
+compiler info: clang: 14.0.0 (clang-1400.0.29.102)
+libc info: no libc information available
+$SHELL (typically, interactive shell): /bin/zsh
+
+
+[Enabled Hooks]
